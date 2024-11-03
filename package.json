@@ -1,0 +1,20 @@
+{
+  "name": "bluelight",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs-mate": "^4.0.0",
+    "express": "^4.21.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-session": "^1.18.1",
+    "mongoose": "^8.7.3",
+    "nodemon": "^3.1.7"
+  }
+}

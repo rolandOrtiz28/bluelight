@@ -1,0 +1,134 @@
+<% layout('/layouts/boilerplate') -%>
+<style>
+  .text-highlight {
+    color: #ffffff; /* Neon blue color */
+    font-weight: bold;
+    transition: opacity 0.5s ease-in-out;
+    text-shadow: 0 0 5px #03045e, 0 0 10px #03045e, 0 0 20px #03045e, 0 0 30px #03045e, 0 0 40px #03045e, 0 0 50px #03045e;
+}
+
+
+  .responsive-video {
+    width: 200%;
+    height: auto;
+    max-width: 200%;
+    object-fit: cover;
+    z-index: -2; /* Moves the video further back */
+    position: relative;
+    opacity: 0.9;
+  }
+
+  .content-layer {
+    position: relative;
+    z-index: 2; /* Ensures content stays above the spotlight */
+  }
+
+  /* Enhanced Spotlight effect */
+  .blue-spotlight {
+    position: absolute;
+    top: 20%; /* Adjust position to control light placement */
+    right: 5%; /* Adjust to aim spotlight more towards video */
+    width: 500px; /* Increased width for better visibility */
+    height: 500px; /* Increased height for better visibility */
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.5) 0%, transparent 80%);
+    border-radius: 50%;
+    z-index: 1; /* Places the spotlight between the video and the content */
+    pointer-events: none;
+    filter: blur(30px); /* Increased blur for soft glow effect */
+  }
+
+  .codepen-button {
+  display: block;
+  cursor: pointer;
+  color: white;
+  margin: 0 auto;
+  position: relative;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 3px;
+  isolation: isolate;
+}
+
+.codepen-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 100%;
+  background: linear-gradient(115deg,#4fcf70,#fad648,#a767e5,#12bcfe,#44ce7b);
+  background-size: 25% 100%;
+  animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop .75s linear infinite;
+  animation-play-state: paused;
+  translate: -5% 0%;
+  transition: translate 0.25s ease-out;
+}
+
+.codepen-button:hover::before {
+  animation-play-state: running;
+  transition-duration: 0.75s;
+  translate: 0% 0%;
+}
+
+@keyframes an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop {
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+.codepen-button span {
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem; /* Smaller padding for a standard button size */
+  font-size: 1rem; /* Smaller font size */
+  background: #000;
+  border-radius: 3px;
+  height: 100%;
+
+}
+</style>
+
+<section class="container-fluid p-5 position-relative">
+  <!-- Blue spotlight overlay -->
+  <div class="blue-spotlight"></div>
+
+  <div class="row align-items-center content-layer">
+    <!-- Right side with caption text -->
+    <div class="col-lg-6 p-5">
+      <h1 class="display-4">
+        Your 24/7 Partner in
+        <span id="animatedText" class="text-highlight">Innovation</span>
+      </h1>
+      <h2 class="mb-3">Empowering Growth Through Expert Solutions</h2>
+      <p class="mb-4">
+        From seamless customer support to advanced technical solutions, we specialize in making your business shine. 
+        Whether you're enhancing online visibility, optimizing customer service, or building powerful digital experiences, 
+        our team is here to elevate every aspect of your journey. Discover how we bring innovation to life, around the clock.
+      </p>
+      <a href="#learn-more" class="codepen-button text-center"><span>Explore Our Services</span></a>
+    </div>
+
+    <!-- Left side with the video in the background -->
+    <div class="col-lg-6 d-flex align-items-center justify-content-center">
+      <video autoplay loop muted playsinline class="img-fluid responsive-video">
+        <source src="/images/rubikscube.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+<script>
+  const words = ["Innovation", "Support", "Solutions", "Growth", "Excellence"];
+  let index = 0;
+
+  function cycleWords() {
+    const textElement = document.getElementById("animatedText");
+    textElement.textContent = words[index];
+    index = (index + 1) % words.length;
+  }
+
+  setInterval(cycleWords, 2000); // Change word every 2 seconds
+</script>
