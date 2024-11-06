@@ -15,7 +15,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '/public')))
 
 app.get('/', (req, res) => {
-    res.render('home/home'); // Ensure you have a 'home/home.ejs' file in the views folder
+    const reviews = [
+        { name: "John Doe", text: "Bluelight has transformed our customer service experience.", image: null },
+        { name: "Jane Smith", text: "Fantastic support and timely solutions.", image: null }, // This will use the default image
+        // Add more reviews as needed
+    ];
+    res.render('home/home', { reviews }); // Pass the reviews array to the template
 });
 
 const port = process.env.PORT || 3000;

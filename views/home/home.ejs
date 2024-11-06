@@ -1,94 +1,5 @@
 <% layout('/layouts/boilerplate') -%>
-<style>
-  .text-highlight {
-    color: #ffffff; /* Neon blue color */
-    font-weight: bold;
-    transition: opacity 0.5s ease-in-out;
-    text-shadow: 0 0 5px #03045e, 0 0 10px #03045e, 0 0 20px #03045e, 0 0 30px #03045e, 0 0 40px #03045e, 0 0 50px #03045e;
-}
-
-
-  .responsive-video {
-    width: 200%;
-    height: auto;
-    max-width: 200%;
-    object-fit: cover;
-    z-index: -2; /* Moves the video further back */
-    position: relative;
-    opacity: 0.9;
-  }
-
-  .content-layer {
-    position: relative;
-    z-index: 2; /* Ensures content stays above the spotlight */
-  }
-
-  /* Enhanced Spotlight effect */
-  .blue-spotlight {
-    position: absolute;
-    top: 20%; /* Adjust position to control light placement */
-    right: 5%; /* Adjust to aim spotlight more towards video */
-    width: 500px; /* Increased width for better visibility */
-    height: 500px; /* Increased height for better visibility */
-    background: radial-gradient(circle, rgba(0, 123, 255, 0.5) 0%, transparent 80%);
-    border-radius: 50%;
-    z-index: 1; /* Places the spotlight between the video and the content */
-    pointer-events: none;
-    filter: blur(30px); /* Increased blur for soft glow effect */
-  }
-
-  .codepen-button {
-  display: block;
-  cursor: pointer;
-  color: white;
-  margin: 0 auto;
-  position: relative;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 6px;
-  overflow: hidden;
-  padding: 3px;
-  isolation: isolate;
-}
-
-.codepen-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 400%;
-  height: 100%;
-  background: linear-gradient(115deg,#4fcf70,#fad648,#a767e5,#12bcfe,#44ce7b);
-  background-size: 25% 100%;
-  animation: an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop .75s linear infinite;
-  animation-play-state: paused;
-  translate: -5% 0%;
-  transition: translate 0.25s ease-out;
-}
-
-.codepen-button:hover::before {
-  animation-play-state: running;
-  transition-duration: 0.75s;
-  translate: 0% 0%;
-}
-
-@keyframes an-at-keyframe-css-at-rule-that-translates-via-the-transform-property-the-background-by-negative-25-percent-of-its-width-so-that-it-gives-a-nice-border-animation_-We-use-the-translate-property-to-have-a-nice-transition-so-it_s-not-a-jerk-of-a-start-or-stop {
-  to {
-    transform: translateX(-25%);
-  }
-}
-
-.codepen-button span {
-  position: relative;
-  display: block;
-  padding: 0.5rem 1rem; /* Smaller padding for a standard button size */
-  font-size: 1rem; /* Smaller font size */
-  background: #000;
-  border-radius: 3px;
-  height: 100%;
-
-}
-</style>
+<link rel="stylesheet" href="/stylesheet/home.css">
 
 <section class="container-fluid p-5 position-relative">
   <!-- Blue spotlight overlay -->
@@ -107,28 +18,225 @@
         Whether you're enhancing online visibility, optimizing customer service, or building powerful digital experiences, 
         our team is here to elevate every aspect of your journey. Discover how we bring innovation to life, around the clock.
       </p>
-      <a href="#learn-more" class="codepen-button text-center"><span>Explore Our Services</span></a>
+      <button type="button" class="btn2">
+        <strong>Our Services</strong>
+        <div id="container-stars">
+          <div id="stars"></div>
+        </div>
+      
+        <div id="glow">
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </button>
     </div>
 
     <!-- Left side with the video in the background -->
     <div class="col-lg-6 d-flex align-items-center justify-content-center">
-      <video autoplay loop muted playsinline class="img-fluid responsive-video">
-        <source src="/images/rubikscube.mp4" type="video/mp4">
+      <video autoplay loop muted playsinline controlsList="nodownload" class="img-fluid responsive-video">
+        <source src="/images/final.mp4" type="video/mp4">
         Your browser does not support the video tag.
-      </video>
+    </video>
+    
+    </div>
+  </div>
+</section>
+<div class="container">
+  
+<section class="customer-logo-section text-start">
+  <!-- Left-aligned header -->
+  <h2 class="logo-label text-start">Partnered with the Best</h2>
+
+  <!-- Centered logo container -->
+  <div class="logo-container text-center">
+    <div class="logo-box mt-5 text-center">
+      <div class="logo-content">
+        <i class="fab fa-apple"></i> <!-- Replace with your client's logo icon -->
+      </div>
+      <div class="text-content">
+        <h3 class="company-name">Apple Inc.</h3>
+        <p class="company-description">Innovating technology and redefining the digital experience, Apple Inc. leads the industry with its premium products and services.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<script>
-  const words = ["Innovation", "Support", "Solutions", "Growth", "Excellence"];
-  let index = 0;
+<section class="services-section py-5">
+  <h2 class="services-title text-start mb-5">Discover the Future with Bluelight</h2>
+  <div class="container-fluid p-5">
+ 
+    <div class="row gx-5">
+      <!-- Customer Service -->
+      <div class="col-md-4 service-item">
+        <div class="service-icon animate-icon"><i class="fas fa-headset"></i></div>
+        <h3 class="service-title">Customer Service</h3>
+        <p class="service-description">
+          Our dedicated team provides round-the-clock customer service, ensuring that every inquiry and concern is handled swiftly and professionally. With a focus on customer satisfaction, we aim to build lasting relationships by resolving issues efficiently and maintaining high standards of service excellence.
+        </p>
+      </div>
+      <!-- Technical Support -->
+      <div class="col-md-4 service-item">
+        <div class="service-icon animate-icon"><i class="fas fa-tools"></i></div>
+        <h3 class="service-title">Technical Support</h3>
+        <p class="service-description">
+          From troubleshooting technical challenges to optimizing system performance, our technical support experts are here to keep your operations running smoothly. We provide reliable assistance tailored to your unique needs, ensuring minimal downtime and maximum productivity.
+        </p>
+      </div>
+      <!-- SEO -->
+      <div class="col-md-4 service-item">
+        <div class="service-icon animate-icon"><i class="fas fa-chart-line"></i></div>
+        <h3 class="service-title">SEO</h3>
+        <p class="service-description">
+          Our SEO specialists are committed to enhancing your online presence by implementing proven strategies to improve search engine rankings. We focus on visibility, reach, and engagement, enabling your brand to connect with a wider audience and drive organic growth.
+        </p>
+      </div>
+      <!-- Email Support -->
+      <div class="col-md-4 service-item">
+        <div class="service-icon animate-icon"><i class="fas fa-envelope"></i></div>
+        <h3 class="service-title">Email Support</h3>
+        <p class="service-description">
+          Effective and prompt email support is vital for customer satisfaction. We manage and respond to customer inquiries with precision, offering clear solutions and helpful guidance. Our team ensures every email interaction is efficient, courteous, and solution-focused.
+        </p>
+      </div>
+      <!-- Advertisements -->
+      <div class="col-md-4 service-item">
+        <div class="service-icon animate-icon"><i class="fas fa-bullhorn"></i></div>
+        <h3 class="service-title">Advertisements</h3>
+        <p class="service-description">
+          Bluelight designs targeted ad campaigns to amplify your brand message and reach your desired audience effectively. By creating captivating and meaningful advertisements, we aim to enhance brand visibility, foster engagement, and drive impactful results.
+        </p>
+      </div>
+      <!-- Web Development -->
+      <div class="col-md-4 service-item">
+        <div class="service-icon animate-icon"><i class="fas fa-code"></i></div>
+        <h3 class="service-title">Web Development</h3>
+        <p class="service-description">
+          Our web development team builds responsive, dynamic, and user-friendly websites that enhance user experience and functionality. We focus on aligning technical design with your business objectives, delivering platforms that are robust, secure, and future-ready.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  function cycleWords() {
-    const textElement = document.getElementById("animatedText");
-    textElement.textContent = words[index];
-    index = (index + 1) % words.length;
-  }
+<section class="analytics-section py-5">
+  <div class="container-fluid">
+    <h2 class="analytics-title mb-5">Business Analytics Growth for 2024</h2>
+    <div class="row align-items-center">
+      <!-- Description and Metrics on the Left -->
+      <div class="col-lg-6">
+        <p class="analytics-description">
+          Our analytics solutions for 2024 empower businesses with data-driven insights, fostering growth and efficiency. Discover how Bluelight's expertise can lead you to optimal results.
+        </p>
+        <div class="metrics">
+          <div class="metric-box">
+            <p class="metric-title">Revenue</p>
+            <h3 class="metric-value" data-target="105000">$0</h3>
+            <p class="metric-change">▲ 49.52%</p>
+          </div>
+          <div class="metric-box">
+            <p class="metric-title">Total Organic Keywords</p>
+            <h3 class="metric-value" data-target="2982">$0</h3>
+            <p class="metric-change">▲ 849.7%</p>
+          </div>
+          <div class="metric-box">
+            <p class="metric-title">Impressions</p>
+            <h3 class="metric-value" data-target="211967">$0</h3>
+            <p class="metric-change">▲ 381.9%</p>
+          </div>
+          <div class="metric-box">
+            <p class="metric-title">Clicks</p>
+            <h3 class="metric-value" data-target="1538">$0</h3>
+            <p class="metric-change">▲ 83.1%</p>
+          </div>
+        </div>
+      </div>
 
-  setInterval(cycleWords, 2000); // Change word every 2 seconds
-</script>
+      <!-- 3D Chart on the Right -->
+      <div class="col-lg-6 d-flex justify-content-center">
+        <canvas id="analyticsChart" width="400" height="300"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="reviews-section mb-5">
+  <h2 class="review-title text-start mb-5">Bluelight is loved by our customers</h2>
+  <div class="review-container">
+    <% reviews.forEach(review => { %>
+      <div class="review" onmouseover="pauseAnimation()" onmouseout="resumeAnimation()">
+        <img 
+          src="<%= review.image || '/images/thumbnail.png' %>" 
+          alt="<%= review.name %>" 
+          class="review-image"
+        >
+        <div class="review-text">
+          <h4 class="review-name"><%= review.name %></h4>
+          <p><%= review.text %></p>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+
+
+</div>
+<footer class="custom-footer py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Left section with logo and mission statement -->
+      <div class="col-md-4 text-start">
+        <img src="/images/logo3.png" alt="Bluelight Logo"  class="footer-logo mb-3 img-fluid" style="width: 200px;">
+        <p class="footer-mission">
+          We aim to bridge gaps, foster innovation, and drive progress by developing digital experiences that are intuitive, inclusive, and inspiring.
+        </p>
+        <p class="copyright">&copy; 2024 Bluelight.</p>
+      </div>
+      
+      <!-- Center section with core services and learn links -->
+      <div class="col-md-4 text-start">
+        <h5 class="footer-heading">Core Services</h5>
+        <ul class="footer-links">
+          <li><a href="#">Customer Service</a></li>
+          <li><a href="#">Technical Support</a></li>
+          <li><a href="#">SEO</a></li>
+          <li><a href="#">Web Development</a></li>
+        </ul>
+        
+        <h5 class="footer-heading mt-4">Learn</h5>
+        <ul class="footer-links">
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Case Studies</a></li>
+        </ul>
+      </div>
+      
+      <!-- Right section with newsletter subscription form -->
+      <div class="col-md-4">
+        <h5 class="footer-heading">Stay Up to Date with Bluelight</h5>
+        <p class="footer-description">Get notified about new updates, products, tips, and tutorials. No spam. You can always unsubscribe.</p>
+        <form class="subscription-form d-flex">
+          <input type="email" class="form-control me-2" placeholder="Your Email" aria-label="Email">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom links -->
+    <div class="row mt-4">
+      <div class="col text-center">
+        <a href="#" class="footer-policy-link">Privacy Policy</a>
+        <a href="#" class="footer-policy-link">Refund Policy</a>
+        <a href="#" class="footer-policy-link">Shipping Policy</a>
+        <a href="#" class="footer-policy-link">Contact Information</a>
+        <a href="#" class="footer-policy-link">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/javascript/home.js"></script>
+
+
