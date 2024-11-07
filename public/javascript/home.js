@@ -210,3 +210,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Register GSAP ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+  
+    // Fade-in and slide-up animation for the header
+    gsap.from(".logo-label", {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".customer-logo-section",
+        start: "top 80%",
+        toggleActions: 'restart pause resume none',
+      }
+    });
+  
+    // Staggered animation for each logo box
+    gsap.from(".logo-box", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power3.out",
+      stagger: 0.3, // Delays each logo box for a cascading effect
+      scrollTrigger: {
+        trigger: ".customer-logo-section",
+        start: "top 80%",
+        toggleActions:'restart pause resume none',
+      }
+    });
+  });
+  

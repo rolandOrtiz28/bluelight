@@ -242,87 +242,57 @@
     }
   }
   .customer-logo-section {
-    background-color: #000;
-    height: 50vh;
-    padding: 20px;
+
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the start to keep the header left-aligned */
+    align-items: flex-start; /* Aligns the h2 title to the left */
+    gap: 30px;
   }
-
-.logo-container {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-}
-
-.logo-label {
+  
+  .logo-label {
     color: #ffffff;
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: 3em;
     font-weight: bold;
-    text-shadow: 
-        0 0 8px rgba(13, 110, 253, 0.7), 
-        0 0 15px rgba(13, 110, 253, 0.5), 
-        0 0 20px rgba(13, 110, 253, 0.3);
-    position: relative;
-    padding-bottom: 10px;
+    text-shadow: 0 0 15px rgba(13, 110, 253, 0.7);
+    margin-bottom: 30px;
     animation: continuousFlicker 3s infinite;
-}
-
- 
-
-/* Style for the logo box */
-.logo-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 30px;
-  background-color: rgba(13, 110, 253, 0.1);
-  border-radius: 10px;
-  box-shadow: 
-      0 0 20px rgba(13, 110, 253, 0.5), 
-      0 0 30px rgba(13, 110, 253, 0.3), 
-      0 0 40px rgba(13, 110, 253, 0.2);
-  backdrop-filter: blur(8px);
-  max-width: 600px; /* Set a maximum width */
-  width: 100%; /* Ensure it is responsive */
-  animation: continuousFlicker 3s infinite;
-}
-
-/* Flex container for logo and text */
-.logo-content {
+    text-align: left; /* Ensures the title is left-aligned */
+  }
+  
+  .logo-container {
+        padding: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    width: 100%; /* Makes sure logo container takes the full width */
+  }
+  
+  .logo-box {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(13, 110, 253, 0.4), 0 0 20px rgba(0, 0, 255, 0.3);
+    max-width: 300px;
+    max-height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
-    font-size: 6em;
-    margin-right: 20px;
-    text-shadow: 
-        0 0 10px rgba(13, 110, 253, 0.7), 
-        0 0 20px rgba(13, 110, 253, 0.5), 
-        0 0 30px rgba(13, 110, 253, 0.3);
-}
-
-/* Text content styling */
-.text-content {
-    color: #ffffff;
-    text-align: left;
-}
-
-.company-name {
-    font-size: 1.8em;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #ffffff;
-    text-shadow: 0 0 5px rgba(13, 110, 253, 0.7);
-}
-
-.company-description {
-    font-size: 1em;
-    color: #ccc;
-}
-
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .logo-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(13, 110, 253, 0.6), 0 0 30px rgba(0, 0, 255, 0.5);
+  }
+  
+  .client-logo {
+    max-width: 150px;
+    max-height: 150px;
+    filter: drop-shadow(0 0 5px rgba(0, 174, 255, 0.7));
+  }
+  
+    
 
 @keyframes continuousFlicker {
   0%, 20% {
@@ -383,8 +353,8 @@
   }
 }
 
+
 .services-section {
-  background-color: #000;
   color: #ffffff;
   padding: 3rem 1rem;
   text-align: left;
@@ -396,33 +366,100 @@
   color: #ffffff;
   text-shadow: 0 0 10px rgba(13, 110, 253, 0.7);
   margin-bottom: 2rem;
-  animation: continuousFlicker 3s infinite;
 }
 
-.service-item {
-  margin-bottom: 2rem;
-  padding: 1rem;
+/* Card structure */
+.card {
+  position: relative;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+  transition: background 0.3s ease-in-out;
+  background: transparent; /* Initial transparent background */
+  margin-top: 20px; /* Space between cards */
 }
 
-.service-icon {
-  font-size: 3em;
+/* Background and text appear on hover */
+.card:hover {
+  background: rgba(50, 50, 50, 0.8); /* Background appears only on hover */
+  box-shadow: 0 8px 25px rgba(13, 110, 253, 0.5);
+  transform: scale(1.04);
+}
+
+/* Icon styling */
+.img {
+  font-size: 3.5em; /* Larger icon */
   color: #ffffff;
-  margin-bottom: 1rem;
-  text-align: start;
-  animation: continuousFlicker 3s infinite;
+  z-index: 1;
+  transition: transform 0.2s ease-in-out;
 }
 
-.service-title {
-  font-size: 1.8em;
+/* Text box initially hidden */
+.textBox {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: opacity 0.3s ease-in-out;
+  text-align: center;
+  padding: 20px;
+  z-index: 2;
+}
+
+/* Text content appears on hover */
+.card:hover .textBox {
+  opacity: 1;
+}
+
+.card:hover .img {
+  transform: scale(1.1); /* Slightly increase icon size on hover */
+}
+
+/* Service title and description styling */
+.textBox > .service-title {
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  font-size: 1.2em;
 }
 
 .service-description {
-  font-size: 1em;
+  font-size: 0.9em;
   color: #cccccc;
   line-height: 1.5;
 }
+
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes anim {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 
 /* footer */
 
@@ -626,5 +663,45 @@
   .metric-change {
     font-size: 0.85em;
     color: #00ffab;
+  }
+  
+
+  .contact-section {
+    background-color: #000;
+    color: #ffffff;
+    padding: 3rem 1rem;
+    border-radius: 10px;
+  }
+  
+  .contact-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(13, 110, 253, 0.7);
+  }
+  
+  .contact-form .form-label {
+    color: #ffffff;
+  }
+  
+  .contact-form .form-control {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #333;
+    border-radius: 5px;
+  }
+  
+  .contact-form .form-control:focus {
+    border-color: #00bfff;
+    box-shadow: none;
+  }
+  
+  .contact-form .btn-primary {
+    background-color: #00bfff;
+    border: none;
+  }
+  
+  .contact-form .btn-primary:hover {
+    background-color: #008cba;
   }
   
