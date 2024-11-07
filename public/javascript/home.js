@@ -242,4 +242,42 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-  
+
+
+  document.getElementById('contactForm').addEventListener('submit', async function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    const responseMessage = document.getElementById('responseMessage');
+
+    try {
+      const response = await fetch('/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, subject, message }), // Send data as JSON
+      });
+      
+      const result = await response.json();
+      
+      // Display the response message with some fun styles
+      responseMessage.innerHTML = `<p>${result.message}</p>`;
+      responseMessage.style.display = 'block';
+      responseMessage.style.color = '#28a745';
+      responseMessage.style.fontWeight = 'bold';
+      
+      // Clear the form fields
+      this.reset();
+    } catch (error) {
+      responseMessage.innerHTML = `<p>Oops! Something went wrong. Try again later.</p>`;
+      responseMessage.style.display = 'block';
+      responseMessage.style.color = '#dc3545';
+      responseMessage.style.fontWeight = 'bold';
+    }
+  });
+

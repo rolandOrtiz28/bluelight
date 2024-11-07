@@ -229,7 +229,7 @@
 <section class="contact-section py-5 mb-2">
   <div class="container">
     <h2 class="contact-title text-start mb-5">Get in Touch with Bluelight</h2>
-    <form action="/send-email" method="POST" class="contact-form">
+    <form action="/send" method="POST" class="contact-form" id="contactForm">
       <div class="mb-3">
         <label for="name" class="form-label">Name</label>
         <input type="text" class="form-control" id="name" name="name" required>
@@ -248,6 +248,7 @@
       </div>
       <button type="submit" class="btn btn-primary">Send Message</button>
     </form>
+    <div id="responseMessage" class="mt-4" style="display: none;"></div> <!-- Message container -->
   </div>
 </section>
 
