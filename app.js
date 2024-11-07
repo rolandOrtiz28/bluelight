@@ -11,44 +11,44 @@ const flash = require('connect-flash')
 const mongoSanitize = require('express-mongo-sanitize');
 const MongoDBStore = require("connect-mongo");
 
-const secret = process.env.SESSION_SECRET
-const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/bluelightinnovations'
-const sessionConfig = {
-    secret,
-    name: '_bluelight',
-    resave: false,
-    saveUninitialized: true,
-    store: MongoDBStore.create({
-        mongoUrl: dbUrl,
-        touchAfter: 24 * 3600 // time period in seconds
-    }),
-    cookie: {
-        httpOnly: true,
-        // secure:true,
-        expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
-        maxAge: 1000 * 60 * 60 * 24 * 7
-    }
-}
+// const secret = process.env.SESSION_SECRET
+// const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/bluelightinnovations'
+// const sessionConfig = {
+//     secret,
+//     name: '_bluelight',
+//     resave: false,
+//     saveUninitialized: true,
+//     store: MongoDBStore.create({
+//         mongoUrl: dbUrl,
+//         touchAfter: 24 * 3600 // time period in seconds
+//     }),
+//     cookie: {
+//         httpOnly: true,
+//         // secure:true,
+//         expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+//         maxAge: 1000 * 60 * 60 * 24 * 7
+//     }
+// }
 
 // Set EJS as the view engine
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-app.use(session(sessionConfig))
+// app.use(session(sessionConfig))
 app.use(mongoSanitize());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '/public')))
-app.use(flash());
+// app.use(flash());
 app.use(express.json()); // Place this before any routes
 
-app.use((req, res, next) => {
+// app.use((req, res, next) => {
 
-    res.locals.currentUser = req.user;
-    res.locals.success = req.flash('success');
-    res.locals.error = req.flash('error');
-    next();
+//     res.locals.currentUser = req.user;
+//     res.locals.success = req.flash('success');
+//     res.locals.error = req.flash('error');
+//     next();
 
-})
+// })
 
 app.get('/', (req, res) => {
     const reviews = [
