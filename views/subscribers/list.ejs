@@ -1,0 +1,33 @@
+<% layout('/layouts/boilerplate') -%>
+<style>
+    td{
+color: white;
+
+    }
+
+    .container{
+        margin-top: 100px;
+    }
+</style>
+
+<div class="container">
+    <h1 class="mb-4">Subscribers List</h1>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Email</th>
+                    <th scope="col">Subscribed At</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% subscribers.forEach(subscriber => { %>
+                    <tr>
+                        <td><%= subscriber.email %></td>
+                        <td><%= subscriber.subscribedAt.toDateString() %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -172,6 +172,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Number Rolling Animation for Customer Service Metrics
+  const customerMetrics = document.querySelectorAll('.customer-service-analytics-section .metric-value');
+
+  customerMetrics.forEach(metric => {
+    const targetValue = parseInt(metric.getAttribute('data-target'), 10);
+
+    gsap.fromTo(metric, { innerHTML: 0 }, {
+      innerHTML: targetValue,
+      duration: 2,
+      ease: 'power1.out',
+      snap: { innerHTML: 1 },
+      onUpdate: function() {
+        metric.innerHTML = Math.round(metric.innerHTML).toLocaleString();
+      }
+    });
+  });
+
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // Register GSAP ScrollTrigger plugin

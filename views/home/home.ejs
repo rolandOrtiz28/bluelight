@@ -12,14 +12,14 @@
         Your 24/7 Partner in
         <span id="animatedText" class="text-highlight">Innovation</span>
       </h1>
-      <h2 class="mb-3">Empowering Growth Through Expert Solutions</h2>
+      <h2 class="mb-3 sweep-animation">Empowering Growth Through Expert Solutions</h2>
       <p class="mb-4">
         From seamless customer support to advanced technical solutions, we specialize in making your business shine. 
         Whether you're enhancing online visibility, optimizing customer service, or building powerful digital experiences, 
         our team is here to elevate every aspect of your journey. Discover how we bring innovation to life, around the clock.
       </p>
       <button type="button" class="btn2">
-        <strong>Our Services</strong>
+        <strong>Innovate with Us</strong>
         <div id="container-stars">
           <div id="stars"></div>
         </div>
@@ -42,28 +42,33 @@
   </div>
 
   <div class="container">
-  <section class="customer-logo-section text-start mb-2">
-    <!-- Left-aligned header -->
-    <h2 class="logo-label ms-3">Partnered with the Best</h2>
-  
-    <!-- Centered logo container -->
-    <div class="logo-container text-center">
+    <section  id="clients"  class="customer-logo-section text-start mb-2">
+      <!-- Left-aligned header -->
+      <h2 class="logo-label ms-3">Partnered with the Best</h2>
     
-      <!-- First Client: Netvue -->
-      <div class="logo-box text-center">
-        <img src="/images/Netvue.png" alt="Netvue Logo" class="client-logo">
-      </div>
+      <!-- Centered logo container -->
+      <div class="logo-container text-center">
       
-      <!-- Second Client: Birdfy -->
-      <div class="logo-box text-center">
-        <img src="/images/Birdfy.png" alt="Birdfy Logo" class="client-logo">
+        <!-- First Client: Netvue -->
+        <div class="logo-box text-center">
+          <a href="https://www.netvue.com/" target="_blank">
+            <img src="/images/Netvue.png" alt="Netvue Logo" class="client-logo">
+          </a>
+        </div>
+        
+        <!-- Second Client: Birdfy -->
+        <div class="logo-box text-center">
+          <a href="https://www.birdfy.com/" target="_blank">
+            <img src="/images/Birdfy.png" alt="Birdfy Logo" class="client-logo">
+          </a>
+        </div>
+      
       </div>
-    
-    </div>
   </section>
+  
 
 
-  <section class="services-section py-5 mb-2">
+  <section  id="services" class="services-section py-5 mb-2">
     <h2 class="services-title text-start mb-5">Discover the Future with Bluelight</h2>
     <div class="container-fluid p-5">
       <div class="row gx-5">
@@ -163,7 +168,7 @@
   
   
 
-<section class="analytics-section py-5 mb-2">
+<section id="analytics" class="analytics-section py-5 mb-2">
   <div class="container-fluid">
     <h2 class="analytics-title mb-5">Business Analytics Growth for 2024</h2>
     <div class="row align-items-center">
@@ -202,12 +207,51 @@
       </div>
     </div>
   </div>
+
+  <div class="container mt-5">
+    <h2 class="customer-service-analytics-title mb-5">Customer Service Performance Metrics</h2>
+    <div class="row">
+      <!-- First Row of Metrics -->
+      <div class="col-md-3">
+        <div class="metric-card">
+          <p class="metric-title">Avg. Response Time</p>
+          <h3 class="metric-value" data-target="3">0</h3>
+          <p class="metric-unit">hours</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="metric-card">
+          <p class="metric-title">Resolved Tickets</p>
+          <h3 class="metric-value" data-target="1580">0</h3>
+          <p class="metric-unit">tickets</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="metric-card">
+          <p class="metric-title">Customer Satisfaction</p>
+          <h3 class="metric-value" data-target="92">0</h3>
+          <p class="metric-unit">%</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="metric-card">
+          <p class="metric-title">Support Volume</p>
+          <h3 class="metric-value" data-target="2100">0</h3>
+          <p class="metric-unit">interactions</p>
+        </div>
+      </div>
+    </div>
 </section>
 
+<!-- <section class="customer-service-analytics-section py-5 mb-2">
+  
+    
+</section> -->
 
 
 
-<section class="reviews-section mb-5 mb-2">
+
+<section  id="reviews" class="reviews-section mb-5 mb-2">
   <h2 class="review-title text-start mb-5">Bluelight is loved by our customers</h2>
   <div class="review-container">
     <% reviews.forEach(review => { %>
@@ -226,30 +270,37 @@
   </div>
 </section>
 
-<section class="contact-section py-5 mb-2">
-  <div class="container">
-    <h2 class="contact-title text-start mb-5">Get in Touch with Bluelight</h2>
+<section  id="contact" class="contact-section py-5 mb-2">
+  <h2 class="contact-title text-start mb-5">Get in Touch with Bluelight</h2>
+  <div class="container  form-container">
+
     <form action="/send" method="POST" class="contact-form" id="contactForm">
       <div class="mb-3">
         <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" name="name" required>
+        <input type="text" class="form-control bg-dark text-white" id="name" name="name" required>
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" name="email" required>
+        <input type="email" class="form-control bg-dark text-white" id="email" name="email" required>
       </div>
       <div class="mb-3">
         <label for="subject" class="form-label">Subject</label>
-        <input type="text" class="form-control" id="subject" name="subject" required>
+        <input type="text" class="form-control bg-dark text-white" id="subject" name="subject" required>
       </div>
       <div class="mb-3">
         <label for="message" class="form-label">Message</label>
-        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+        <textarea class="form-control bg-dark text-white" id="message" name="message" rows="4" required></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Send Message</button>
     </form>
     <div id="responseMessage" class="mt-4" style="display: none;"></div> <!-- Message container -->
   </div>
+</section>
+<section class="full-width-video-section">
+  <video autoplay loop muted playsinline controlsList="nodownload" class="full-width-video">
+    <source src="/images/rawbluelight.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </section>
 
 
@@ -287,8 +338,8 @@
       <div class="col-md-4">
         <h5 class="footer-heading">Stay Up to Date with Bluelight</h5>
         <p class="footer-description">Get notified about new updates, products, tips, and tutorials. No spam. You can always unsubscribe.</p>
-        <form class="subscription-form d-flex">
-          <input type="email" class="form-control me-2" placeholder="Your Email" aria-label="Email">
+        <form action="/subs" method="POST" class="subscription-form d-flex">
+          <input type="email" name="email" class="form-control me-2" placeholder="Your Email" aria-label="Email" required>
           <button type="submit" class="btn btn-primary">Subscribe</button>
         </form>
       </div>

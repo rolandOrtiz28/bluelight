@@ -105,7 +105,7 @@
   strong {
     z-index: 2;
     font-family: 'Poppins', sans-serif;
-    font-size: 13px;
+    font-size: 10px;
     letter-spacing: 5px;
     color: #ffffff;
     text-shadow: 0 0 4px white;
@@ -241,57 +241,77 @@
       box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
   }
-  .customer-logo-section {
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Aligns the h2 title to the left */
-    gap: 30px;
-  }
-  
-  .logo-label {
+  @keyframes lightSweep {
+    0% {
+        background-position: 150%;
+    }
+    100% {
+        background-position: -150%;
+    }
+}
+
+.sweep-animation {
+    display: inline-block;
+    position: relative;
     color: #ffffff;
-    font-size: 3em;
-    font-weight: bold;
-    text-shadow: 0 0 15px rgba(13, 110, 253, 0.7);
-    margin-bottom: 30px;
-    animation: continuousFlicker 3s infinite;
-    text-align: left; /* Ensures the title is left-aligned */
-  }
-  
-  .logo-container {
-        padding: 60px;
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-    width: 100%; /* Makes sure logo container takes the full width */
-  }
-  
-  .logo-box {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(13, 110, 253, 0.4), 0 0 20px rgba(0, 0, 255, 0.3);
-    max-width: 300px;
-    max-height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .logo-box:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 30px rgba(13, 110, 253, 0.6), 0 0 30px rgba(0, 0, 255, 0.5);
-  }
-  
-  .client-logo {
-    max-width: 150px;
-    max-height: 150px;
-    filter: drop-shadow(0 0 5px rgba(0, 174, 255, 0.7));
-  }
-  
+    background: linear-gradient(120deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 60%);
+    background-size: 150%; /* Adjust gradient width for a narrower sweep */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: lightSweep 5s linear infinite; /* Loop the animation smoothly */
+}
+.customer-logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns the h2 title to the left */
+  gap: 30px;
+}
+
+.logo-label {
+  color: #ffffff;
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(13, 110, 253, 0.7);
+  margin-bottom: 30px;
+  animation: continuousFlicker 3s infinite;
+  text-align: left; /* Ensures the title is left-aligned */
+}
+
+.logo-container {
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  width: 100%; /* Makes sure logo container takes the full width */
+}
+
+.logo-box {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(13, 110, 253, 0.4), 0 0 20px rgba(0, 0, 255, 0.3);
+  width: 200px; /* Fixed width */
+  height: 100px; /* Fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(13, 110, 253, 0.6), 0 0 30px rgba(0, 0, 255, 0.5);
+}
+
+.client-logo {
+  max-width: 150px;
+  max-height: 150px;
+  filter: drop-shadow(0 0 5px rgba(0, 174, 255, 0.7));
+}
+
     
 
 @keyframes continuousFlicker {
@@ -366,6 +386,7 @@
   color: #ffffff;
   text-shadow: 0 0 10px rgba(13, 110, 253, 0.7);
   margin-bottom: 2rem;
+  animation: continuousFlicker 3s infinite;
 }
 
 /* Card structure */
@@ -387,7 +408,7 @@
 
 /* Background and text appear on hover */
 .card:hover {
-  background: rgba(50, 50, 50, 0.8); /* Background appears only on hover */
+  background: rgba(12, 12, 12, 0.8); /* Background appears only on hover */
   box-shadow: 0 8px 25px rgba(13, 110, 253, 0.5);
   transform: scale(1.04);
 }
@@ -402,7 +423,7 @@
 
 /* Text box initially hidden */
 .textBox {
-  opacity: 0;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -414,8 +435,12 @@
   z-index: 2;
 }
 
+.card .service-description{
+  opacity: 0;
+}
+
 /* Text content appears on hover */
-.card:hover .textBox {
+.card:hover .service-description {
   opacity: 1;
 }
 
@@ -622,6 +647,7 @@
     text-shadow: 0 0 10px rgba(13, 110, 253, 0.7);
     margin-bottom: 2rem;
     text-align: center;
+    animation: continuousFlicker 3s infinite;
   }
   
   .analytics-description {
@@ -664,44 +690,191 @@
     font-size: 0.85em;
     color: #00ffab;
   }
-  
 
-  .contact-section {
+
+/* Customer Service Analytics Section */
+.customer-service-analytics-section {
+  background-color: #111111;
+  padding: 3rem 1rem;
+  border-radius: 10px;
+}
+
+.customer-service-analytics-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(13, 110, 253, 0.7);
+  margin-bottom: 2rem;
+  text-align: center;
+  animation: continuousFlicker 3s infinite;
+}
+
+/* Metric Card Styling */
+.metric-card {
+  background: linear-gradient(135deg, #004e98, #00bfff);
+    color: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: scale(1.05);
+}
+
+.metric-title {
+  font-size: 1em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.metric-value {
+  font-size: 2em;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0.5rem 0;
+}
+
+.metric-unit {
+  font-size: 0.9em;
+  color: #00ffab;
+}
+
+/* Chart Title */
+.chart-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+
+.contact-section {
     background-color: #000;
     color: #ffffff;
     padding: 3rem 1rem;
     border-radius: 10px;
-  }
-  
-  .contact-title {
-    font-size: 2em;
+}
+
+.contact-title {
+  font-size: 2.5em;
     font-weight: bold;
     color: #ffffff;
     text-shadow: 0 0 10px rgba(13, 110, 253, 0.7);
-  }
-  
-  .contact-form .form-label {
-    color: #ffffff;
-  }
-  
-  .contact-form .form-control {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    border: 1px solid #333;
-    border-radius: 5px;
-  }
-  
-  .contact-form .form-control:focus {
-    border-color: #00bfff;
-    box-shadow: none;
-  }
-  
-  .contact-form .btn-primary {
-    background-color: #00bfff;
-    border: none;
-  }
-  
-  .contact-form .btn-primary:hover {
-    background-color: #008cba;
-  }
-  
+    animation: continuousFlicker 3s infinite;
+}
+
+.form-container {
+    width: 80%;
+    background: linear-gradient(#212121, #212121) padding-box,
+                linear-gradient(145deg, transparent 35%, #2b1cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    padding: 32px 24px;
+    font-size: 14px;
+    font-family: inherit;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+.form-container button:active {
+    scale: 0.95;
+}
+
+.form-container .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-container .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.form-container .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #717171;
+    font-weight: 600;
+    font-size: 12px;
+    animation: continuousFlicker 3s infinite;
+}
+
+/* Ensuring input and textarea fields have black background */
+.form-container .form-group input,
+.form-container .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: #fff; /* White text for readability */
+    background-color: #000; /* Black background */
+    border: 1px solid #414141;
+    font-family: inherit;
+}
+
+.form-container .form-group textarea {
+    resize: none;
+    height: 96px;
+}
+
+.form-container .form-group input::placeholder,
+.form-container .form-group textarea::placeholder {
+    opacity: 0.5;
+    color: #fff; /* White placeholder text for visibility */
+}
+
+.form-container .form-group input:focus,
+.form-container .form-group textarea:focus {
+    outline: none;
+    border-color: #2b1cff; /* Focus border color */
+}
+
+.form-container .form-submit-btn {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-self: flex-start;
+    font-family: inherit;
+    color: #717171;
+    font-weight: 600;
+    width: 40%;
+    background: #313131;
+    border: 1px solid #414141;
+    padding: 12px 16px;
+    font-size: inherit;
+    gap: 8px;
+    margin-top: 8px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.form-container .form-submit-btn:hover {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+
+/* Full-width video section styling */
+.full-width-video-section {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  background-color: #000; /* Background color for padding area */
+  padding: 0;
+  margin: 0;
+}
+
+.full-width-video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
