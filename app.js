@@ -17,10 +17,8 @@ const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/bluelightinnovati
 
 // Connect to MongoDB with extended timeout options
 mongoose.connect(dbUrl, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
     serverSelectionTimeoutMS: 20000, // Timeout after 20 seconds
-    connectTimeoutMS: 20000         // Connect timeout of 20 seconds
+    connectTimeoutMS: 20000          // Connect timeout of 20 seconds
 }).then(() => {
     console.log('Connected to MongoDB');
 }).catch((error) => {
