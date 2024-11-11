@@ -80,16 +80,20 @@
     animation: gradient_301 5s ease infinite;
     border: double 4px transparent;
     background-image: linear-gradient(#212121, #212121),
-      linear-gradient(
-        137.48deg,
-        #0030b4 10%,
-        #6e90ff 45%,
-        #fafafa 67%,
-        #0044ff 87%
-      );
+    linear-gradient(
+      137.48deg,
+      #4346f5 10%,
+      #251e63 45%,
+      #000000 67%,
+      #161a25 87%
+    );
     background-origin: border-box;
     background-clip: content-box, border-box;
   }
+.col-lg-6 a{
+  text-decoration: none;
+}
+
   
   #container-stars {
     position: absolute;
@@ -106,7 +110,7 @@
     z-index: 2;
     font-family: 'Poppins', sans-serif;
     font-size: 10px;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     color: #ffffff;
     text-shadow: 0 0 4px white;
   }
@@ -878,3 +882,4 @@
   height: auto;
   object-fit: cover;
 }
+
