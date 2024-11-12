@@ -9,17 +9,16 @@ const words = ["Innovation", "Support", "Solutions", "Growth", "Excellence"];
 
   setInterval(cycleWords, 2000); // Change word every 2 seconds
 
-  // Review Section:
-  let reviewContainer = document.querySelector(".review-container");
+  let reviewTrack = document.querySelector(".review-track");
 
-function pauseAnimation() {
-  reviewContainer.style.animationPlayState = "paused";
-}
-
-function resumeAnimation() {
-  reviewContainer.style.animationPlayState = "running";
-}
-
+  function pauseAnimation() {
+    reviewTrack.style.animationPlayState = "paused";
+  }
+  
+  function resumeAnimation() {
+    reviewTrack.style.animationPlayState = "running";
+  }
+    
 document.addEventListener('DOMContentLoaded', () => {
   // Register ScrollTrigger with GSAP
   gsap.registerPlugin(ScrollTrigger);

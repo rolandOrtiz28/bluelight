@@ -45,7 +45,7 @@
     <section id="clients" class="customer-logo-section text-center mb-2">
       <!-- Title centered above the logo section -->
       <h2 class="logo-label">Partnered with the Best</h2>
-    
+      <p class="text-center mb-5">We collaborate with top brands to deliver exceptional service and expertise, pushing boundaries and achieving excellence.</p>
       <!-- Logo container for partners -->
       <div class="logo-container">
         <!-- First Client: Netvue -->
@@ -70,7 +70,8 @@
 
 
   <section  id="services" class="services-section py-5 mb-2 mt-5">
-    <h2 class="services-title text-center mb-5">Discover the Future with Bluelight</h2>
+    <h2 class="text-center mb-4">Discover the Future with Bluelight</h2>
+    <p class="text-center mb-5">Our services meet the evolving needs of businesses, ensuring success in every interaction. From support to marketing, we've got you covered.</p>
     <div class="container-fluid p-5">
       <div class="row gx-5">
         <!-- Customer Service Card -->
@@ -171,7 +172,7 @@
 
 <section id="analytics" class="analytics-section py-5 mb-2">
   <div class="container-fluid">
-    <h2 class="analytics-title mb-5">Business Analytics Growth for 2024</h2>
+    <h2 class="text-center mb-4">Business Analytics Growth for 2024</h2>
     <div class="row align-items-center">
       <!-- Description and Metrics on the Left -->
       <div class="col-lg-6">
@@ -210,7 +211,8 @@
   </div>
 
   <div class="container mt-5">
-    <h2 class="customer-service-analytics-title mb-5">Customer Service Performance Metrics</h2>
+    <h2 class="text-center mb-4">Customer Service Performance Metrics</h2>
+    
     <div class="row">
       <!-- First Row of Metrics -->
       <div class="col-md-3">
@@ -248,31 +250,91 @@
   
     
 </section> -->
+<section id="reviews" class="reviews-section py-5">
+  <h2 class="text-center mb-4">Beyond Expectations</h2>
+  <p class="text-center mb-5">
+    Bluelight is dedicated to delivering exceptional service, empowering businesses to reach new heights and fostering lasting relationships.
+  </p>
 
-
-
-
-<section  id="reviews" class="reviews-section mb-5 mb-2">
-  <h2 class="review-title text-center mb-5">Bluelight is loved by our customers</h2>
-  <div class="review-container">
-    <% reviews.forEach(review => { %>
-      <div class="review" onmouseover="pauseAnimation()" onmouseout="resumeAnimation()">
-        <img 
-          src="<%= review.image || '/images/thumbnail.png' %>" 
-          alt="<%= review.name %>" 
-          class="review-image"
-        >
-        <div class="review-text">
-          <h4 class="review-name"><%= review.name %></h4>
-          <p><%= review.text %></p>
+  <div class="review-slider">
+    <div class="review-track" onmouseover="pauseAnimation()" onmouseout="resumeAnimation()">
+      <div class="review-cards">
+        <div class="review-card">
+          <p class="review-text">
+            "Bluelight transformed the way we handle customer inquiries at Birdfy. The efficiency gains have been remarkable!"
+          </p>
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1627161683077-e34782c24d81?q=80&w=2006&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Author Image" class="author-image">
+            <div class="author-info">
+              <p class="author-name">Alice Green</p>
+              <p class="author-position">Operations Manager, Birdfy</p>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">
+            "Our support team's productivity at Netvue skyrocketed thanks to Bluelight's solutions. Truly a game-changer."
+          </p>
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Author Image" class="author-image">
+            <div class="author-info">
+              <p class="author-name">Michael Tran</p>
+              <p class="author-position">Support Lead, Netvue</p>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">
+            "Bluelight has redefined our approach to customer engagement. Birdfy's clients are happier than ever!"
+          </p>
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1589525231707-f2de2428f59c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Author Image" class="author-image">
+            <div class="author-info">
+              <p class="author-name">Sophia Li</p>
+              <p class="author-position">Customer Success Manager, Birdfy</p>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">
+            "The Bluelight team provided Netvue with exceptional support. They feel like an extension of our own team."
+          </p>
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Author Image" class="author-image">
+            <div class="author-info">
+              <p class="author-name">David Kim</p>
+              <p class="author-position">Director of Client Relations, Netvue</p>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <p class="review-text">
+            "Bluelight's tools allowed us at Birdfy to streamline our customer service. The impact on our workflow has been tremendous!"
+          </p>
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1611432579699-484f7990b127?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Author Image" class="author-image">
+            <div class="author-info">
+              <p class="author-name">Laura Chen</p>
+              <p class="author-position">Head of Customer Support, Birdfy</p>
+            </div>
+          </div>
         </div>
       </div>
-    <% }) %>
+      
+      
+      </div>
+    </div>
   </div>
 </section>
 
+
+
+
+
+
 <section  id="contact" class="contact-section py-5 mb-2">
-  <h2 class="contact-title text-center mb-5">Get in Touch with Bluelight</h2>
+  <h2 class="text-center mb-4">Get in Touch with Bluelight</h2>
+  <p class="text-center mb-5">Ready to elevate your business? Contact us for tailored solutions, expert advice, and partnership opportunities. We're here to help you succeed.</p>
   <div class="container  form-container">
 
     <form action="/send" method="POST" class="contact-form" id="contactForm">

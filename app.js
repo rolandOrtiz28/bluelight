@@ -191,13 +191,17 @@ const contactSchema = Joi.object({
   });
 
 
-app.get('/', (req, res) => {
+  app.get('/', (req, res) => {
     const reviews = [
         { name: "John Doe", text: "Bluelight has transformed our customer service experience.", image: null },
-        { name: "Jane Smith", text: "Fantastic support and timely solutions.", image: null }
-        // Add more reviews as needed
+        { name: "Jane Smith", text: "Fantastic support and timely solutions.", image: null },
+        { name: "Michael Lee", text: "Their team truly cares about customer satisfaction.", image: null },
+        { name: "Emily Davis", text: "We've seen a remarkable improvement in our response times.", image: null },
+        { name: "Sarah Wilson", text: "Bluelight offers reliable and professional service.", image: null },
+        { name: "Robert Brown", text: "Our clients have never been happier with our support.", image: null },
+        { name: "Linda Martinez", text: "Seamless integration with our existing system.", image: null }
     ];
-    res.render('home/home', { reviews }); // Pass the reviews array to the template
+    res.render('home/home', { reviews });
 });
 
 app.post('/subs', catchAsync(async (req, res) => {
