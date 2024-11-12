@@ -42,43 +42,42 @@
   </div>
 
   <div class="container">
-    <section  id="clients"  class="customer-logo-section text-start mb-2">
-      <!-- Left-aligned header -->
-      <h2 class="logo-label ms-3">Partnered with the Best</h2>
+    <section id="clients" class="customer-logo-section text-center mb-2">
+      <!-- Title centered above the logo section -->
+      <h2 class="logo-label">Partnered with the Best</h2>
     
-      <!-- Centered logo container -->
-      <div class="logo-container text-center">
-      
+      <!-- Logo container for partners -->
+      <div class="logo-container">
         <!-- First Client: Netvue -->
-        <div class="logo-box text-center">
+        <div class="logo-box">
           <a href="https://www.netvue.com/" target="_blank">
             <img src="/images/Netvue.png" alt="Netvue Logo" class="client-logo">
           </a>
         </div>
-        
+    
         <!-- Second Client: Birdfy -->
-        <div class="logo-box text-center">
+        <div class="logo-box">
           <a href="https://www.birdfy.com/" target="_blank">
             <img src="/images/Birdfy.png" alt="Birdfy Logo" class="client-logo">
           </a>
         </div>
-       
         
-      
+        <!-- Add more logos as needed in similar structure -->
       </div>
-  </section>
+    </section>
+    
   
 
 
-  <section  id="services" class="services-section py-5 mb-2">
-    <h2 class="services-title text-start mb-5">Discover the Future with Bluelight</h2>
+  <section  id="services" class="services-section py-5 mb-2 mt-5">
+    <h2 class="services-title text-center mb-5">Discover the Future with Bluelight</h2>
     <div class="container-fluid p-5">
       <div class="row gx-5">
         <!-- Customer Service Card -->
         <div class="col-md-4">
           <div class="card service-item">
             <div class="service-icon img">
-              <i class="fas fa-headset"></i>
+              <img src="/images/CS.gif" alt="">
             </div>
             <div class="textBox">
               <p class="service-title">Customer Service</p>
@@ -93,7 +92,7 @@
         <div class="col-md-4">
           <div class="card service-item">
             <div class="service-icon img">
-              <i class="fas fa-tools"></i>
+              <img src="/images/TS.gif" alt="">
             </div>
             <div class="textBox">
               <p class="service-title">Technical Support</p>
@@ -108,7 +107,7 @@
         <div class="col-md-4">
           <div class="card service-item">
             <div class="service-icon img">
-              <i class="fas fa-chart-line"></i>
+              <img src="/images/SEO.gif" alt="">
             </div>
             <div class="textBox">
               <p class="service-title">SEO</p>
@@ -123,7 +122,7 @@
         <div class="col-md-4">
           <div class="card service-item">
             <div class="service-icon img">
-              <i class="fas fa-envelope"></i>
+              <img src="/images/email.gif" alt="">
             </div>
             <div class="textBox">
               <p class="service-title">Email Support</p>
@@ -138,7 +137,7 @@
         <div class="col-md-4">
           <div class="card service-item">
             <div class="service-icon img">
-              <i class="fas fa-bullhorn"></i>
+              <img src="/images/ADS.gif" alt="">
             </div>
             <div class="textBox">
               <p class="service-title">Advertisements</p>
@@ -153,7 +152,7 @@
         <div class="col-md-4">
           <div class="card service-item">
             <div class="service-icon img">
-              <i class="fas fa-code"></i>
+              <img src="/images/WD.gif" alt="">
             </div>
             <div class="textBox">
               <p class="service-title">Web Development</p>
@@ -254,7 +253,7 @@
 
 
 <section  id="reviews" class="reviews-section mb-5 mb-2">
-  <h2 class="review-title text-start mb-5">Bluelight is loved by our customers</h2>
+  <h2 class="review-title text-center mb-5">Bluelight is loved by our customers</h2>
   <div class="review-container">
     <% reviews.forEach(review => { %>
       <div class="review" onmouseover="pauseAnimation()" onmouseout="resumeAnimation()">
@@ -273,7 +272,7 @@
 </section>
 
 <section  id="contact" class="contact-section py-5 mb-2">
-  <h2 class="contact-title text-start mb-5">Get in Touch with Bluelight</h2>
+  <h2 class="contact-title text-center mb-5">Get in Touch with Bluelight</h2>
   <div class="container  form-container">
 
     <form action="/send" method="POST" class="contact-form" id="contactForm">

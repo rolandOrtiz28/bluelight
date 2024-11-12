@@ -110,7 +110,7 @@
     z-index: 2;
     font-family: 'Poppins', sans-serif;
     font-size: 10px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color: #ffffff;
     text-shadow: 0 0 4px white;
   }
@@ -269,54 +269,76 @@
 .customer-logo-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Aligns the h2 title to the left */
-  gap: 30px;
+  align-items: center;
+  padding: 50px 0;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgb(44, 44, 44);
+  border-radius: 20px;
+}
+
+.customer-logo-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2); /* Light color for the glow */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(57, 13, 253, 0.3);
+  border-radius: 50%;
+  filter: blur(8px); /* Softens the light effect */
+  z-index: 1;
 }
 
 .logo-label {
-  color: #ffffff;
-  font-size: 3em;
-  font-weight: bold;
-  text-shadow: 0 0 15px rgba(13, 110, 253, 0.7);
-  margin-bottom: 30px;
-  animation: continuousFlicker 3s infinite;
-  text-align: left; /* Ensures the title is left-aligned */
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+  opacity: 0.85;
+  position: relative;
+  z-index: 2; /* Ensure it appears above the glow */
 }
 
 .logo-container {
-  padding: 60px;
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  gap: 2rem;
   flex-wrap: wrap;
-  width: 100%; /* Makes sure logo container takes the full width */
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  z-index: 2; /* Ensure it appears above the glow */
 }
-
 .logo-box {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(13, 110, 253, 0.4), 0 0 20px rgba(0, 0, 255, 0.3);
-  width: 200px; /* Fixed width */
-  height: 100px; /* Fixed height */
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  width: 200px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo-box:hover {
   transform: scale(1.1);
-  box-shadow: 0 10px 30px rgba(13, 110, 253, 0.6), 0 0 30px rgba(0, 0, 255, 0.5);
 }
 
 .client-logo {
-  max-width: 150px;
-  max-height: 150px;
-  filter: drop-shadow(0 0 5px rgba(0, 174, 255, 0.7));
+  max-width: 100%;
+  max-height: 100%;
+  filter: brightness(0) invert(1);
 }
+ 
+.logo-box:hover .client-logo{
+filter: none;
 
-    
+}
 
 @keyframes continuousFlicker {
   0%, 20% {
@@ -425,9 +447,14 @@
   transition: transform 0.2s ease-in-out;
 }
 
+.img img {
+  width: 100px; /* Adjust size as needed */
+  object-fit: contain;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Adds a shadow effect */
+  border-radius: 8px; /* Optional: rounds the corners slightly */
+}
 /* Text box initially hidden */
 .textBox {
-
   display: flex;
   flex-direction: column;
   align-items: center;
