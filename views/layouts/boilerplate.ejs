@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bluelight Innovations</title>
-    <link rel="stylesheet" href="/stylesheet/boilerplate.css">
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-DyZ88mC6Up2uqS1S3eRYntDlmp1cqkCff3K7c+61w3o5J10n6x7C8j08MfW8R5V5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
@@ -36,23 +36,12 @@
 }
 
 
-#particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100vh; /* Adjust to viewport height */
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-        .container-fluid {
-            z-index: 1;
-            position: relative;
-        }
+
     </style>
 </head>
 
 <body>
-    <!-- <div id="particles-js"></div> -->
+  
     <header>
         <%- include('../partials/navbar') %>
     </header>
@@ -65,64 +54,12 @@
     <footer></footer>
 
     <!-- Load Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-c53A7fAuT2iVt2+OrB+0gvLvF5xOTIF03D3F7G/HYgOq4tyiSpn+Ek1rs4eZ+2Ik" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/00e4d50ddc.js" crossorigin="anonymous"></script>
     
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-    <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 160, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#ffffff" },
-                "shape": {
-                    "type": "circle",
-                    "stroke": { "width": 0, "color": "#000000" },
-                    "polygon": { "nb_sides": 5 },
-                    "image": { "src": "img/github.svg", "width": 100, "height": 100 }
-                },
-                "opacity": {
-                    "value": 1,
-                    "random": true,
-                    "anim": { "enable": true, "speed": 1, "opacity_min": 0, "sync": false }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": { "enable": false, "speed": 4, "size_min": 0.3, "sync": false }
-                },
-                "line_linked": { "enable": false, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
-                "move": {
-                    "enable": true,
-                    "speed": 1,
-                    "direction": "none",
-                    "random": true,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": { "enable": false, "rotateX": 600, "rotateY": 600 }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": { "enable": true, "mode": "bubble" },
-                    "onclick": { "enable": true, "mode": "repulse" },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": { "distance": 400, "line_linked": { "opacity": 1 } },
-                    "bubble": { "distance": 250, "size": 0, "duration": 2, "opacity": 0, "speed": 3 },
-                    "repulse": { "distance": 400, "duration": 0.4 },
-                    "push": { "particles_nb": 4 },
-                    "remove": { "particles_nb": 2 }
-                }
-            },
-            "retina_detect": true
-        });
-    </script>
+
+   
 </body>
 </html>

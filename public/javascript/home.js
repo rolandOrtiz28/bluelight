@@ -20,56 +20,95 @@ function resumeAnimation() {
   reviewContainer.style.animationPlayState = "running";
 }
 
-const ctx = document.getElementById('analyticsChart').getContext('2d');
+document.addEventListener('DOMContentLoaded', () => {
+  // Register ScrollTrigger with GSAP
+  gsap.registerPlugin(ScrollTrigger);
 
-const analyticsChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        datasets: [{
-            label: 'Growth',
-            data: [10, 20, 35, 50, 65, 80, 95, 110, 125, 140, 160, 180],
-            borderColor: '#00bfff',
-            backgroundColor: 'rgba(0, 150, 255, 0.1)',
-            borderWidth: 2,
-            tension: 0.4,
-            fill: true,
-            pointRadius: 0,
-            pointHitRadius: 5,
-        }]
-    },
-    options: {
-        scales: {
-            y: {
+  const canvas = document.getElementById('analyticsChart');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+
+    // Trigger chart animation when it scrolls into view
+    ScrollTrigger.create({
+      trigger: '#analyticsChart',
+      start: 'top 80%',
+      onEnter: () => {
+        console.log("Entering viewport and initializing chart...");
+
+        // Destroy previous instance if it exists and is a Chart instance
+        if (window.analyticsChart && typeof window.analyticsChart.destroy === 'function') {
+          window.analyticsChart.destroy();
+          console.log("Destroyed previous chart instance.");
+        } else {
+          console.log("No previous chart instance to destroy.");
+        }
+
+        // Create a new chart instance
+        window.analyticsChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+              label: 'Growth',
+              data: [10, 20, 35, 50, 65, 80, 95, 110, 125, 140, 160, 180],
+              borderColor: '#00bfff',
+              backgroundColor: 'rgba(0, 150, 255, 0.1)',
+              borderWidth: 2,
+              tension: 0.4,
+              fill: true,
+              pointRadius: 0,
+              pointHitRadius: 5,
+            }]
+          },
+          options: {
+            scales: {
+              y: {
                 beginAtZero: true,
                 grid: {
-                    color: 'rgba(255, 255, 255, 0.1)',
+                  color: 'rgba(255, 255, 255, 0.1)',
                 },
                 ticks: {
-                    color: '#ffffff',
-                    stepSize: 20
+                  color: '#ffffff',
+                  stepSize: 20
                 }
-            },
-            x: {
+              },
+              x: {
                 grid: {
-                    display: false
+                  display: false
                 },
                 ticks: {
-                    color: '#ffffff'
+                  color: '#ffffff'
                 }
-            }
-        },
-        plugins: {
-            legend: {
+              }
+            },
+            plugins: {
+              legend: {
                 display: false
+              }
+            },
+            animation: {
+              duration: 2000,
+              easing: 'linear',
+              onComplete: () => {
+                console.log("Chart animation completed.");
+              }
             }
-        },
-        animation: {
-            duration: 2000,
-            easing: 'easeInOutBounce'
-        }
-    }
+          }
+        });
+
+        // Force a chart update to render
+        window.analyticsChart.update();
+        console.log("Chart created and update forced.");
+      }
+    });
+  } else {
+    console.error("Canvas element with ID 'analyticsChart' not found.");
+  }
 });
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // Register ScrollTrigger with GSAP
@@ -280,24 +319,30 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, subject, message }), // Send data as JSON
+        body: JSON.stringify({ name, email, subject, message }),
       });
-      
+    
       const result = await response.json();
-      
-      // Display the response message with some fun styles
-      responseMessage.innerHTML = `<p>${result.message}</p>`;
-      responseMessage.style.display = 'block';
-      responseMessage.style.color = '#28a745';
-      responseMessage.style.fontWeight = 'bold';
-      
-      // Clear the form fields
-      this.reset();
+    
+      if (!response.ok) {
+        // Display the Joi validation error message
+        responseMessage.innerHTML = `<p>${result.error || "Something went wrong."}</p>`;
+        responseMessage.style.color = '#dc3545';
+        responseMessage.style.fontWeight = 'bold';
+        responseMessage.style.display = 'block';
+      } else {
+        // Display the success message
+        responseMessage.innerHTML = `<p>${result.message}</p>`;
+        responseMessage.style.color = '#28a745';
+        responseMessage.style.fontWeight = 'bold';
+        responseMessage.style.display = 'block';
+        this.reset();
+      }
     } catch (error) {
       responseMessage.innerHTML = `<p>Oops! Something went wrong. Try again later.</p>`;
-      responseMessage.style.display = 'block';
       responseMessage.style.color = '#dc3545';
       responseMessage.style.fontWeight = 'bold';
+      responseMessage.style.display = 'block';
     }
   });
 
