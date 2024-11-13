@@ -20,13 +20,15 @@ const secret = process.env.SESSION_SECRET;
 const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/bluelightinnovations';
 
 // Connect to MongoDB with extended timeout options
-mongoose.connect(dbUrl, {});
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, " connection error:"));
-db.once("open", () => {
-    console.log("Database Connected");
-})
+mongoose.connect(dbUrl, {
+  serverSelectionTimeoutMS: 5000 // Adjust as needed
+});
 
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => {
+  console.log("Database Connected");
+});
 const sessionConfig = {
     secret,
     name: '_bluelight',
@@ -274,6 +276,9 @@ app.post('/send', catchAsync(async (req, res) => {
 }));
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+const server = app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on port ${port}`);
 });
+
+server.keepAliveTimeout = 120000; // 120 seconds
+server.headersTimeout = 120000;
