@@ -249,6 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleActions: 'restart pause resume none',
     }
   });
+
+
 });
 
 
@@ -345,3 +347,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  document.addEventListener("DOMContentLoaded", function() {
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Team Section Scroll-Triggered Animation
+    gsap.from(".team-member", {
+      y: -50,
+      opacity: 0,
+      duration: 0.8,
+      ease: "bounce.out",
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: "#our-team",
+        start: "top 80%",
+        toggleActions:'restart pause resume none',
+      }
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // About Section Scroll-Triggered Animation (Pan effect from sides)
+    gsap.from(".about-img", {
+      x: -200,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".About-Section",
+        start: "top 80%",
+        toggleActions:'restart pause resume none',
+      }
+    });
+
+    gsap.from(".about-text", {
+      x: 200,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power2.out",
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: ".About-Section",
+        start: "top 80%",
+        toggleActions:'restart pause resume none',
+      }
+    });
+
+  });
