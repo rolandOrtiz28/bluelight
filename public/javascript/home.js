@@ -397,3 +397,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
   });
+
+
+  document.querySelectorAll('.team-member').forEach(member => {
+    const message = document.createElement('div');
+    message.classList.add('speech-bubble');
+    message.textContent = member.getAttribute('data-message');
+    member.appendChild(message);
+});
