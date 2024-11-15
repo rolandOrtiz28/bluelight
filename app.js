@@ -17,8 +17,8 @@ const Subscriber = require('./model/Subscriber');
 const helmet = require('helmet')
 const Joi = require('joi');
 const secret = process.env.SESSION_SECRET;
-const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/bluelightinnovations';
-// 
+const dbUrl = 'mongodb://127.0.0.1:27017/bluelightinnovations';
+// process.env.DB_URL || 
 // Connect to MongoDB with extended timeout options
 mongoose.connect(dbUrl, {
   serverSelectionTimeoutMS: 5000 // Adjust as needed

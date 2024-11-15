@@ -1,161 +1,116 @@
 <style>
   /* Button styling */
   .btn3 {
-            position: relative;
-            padding: 0.8em 1.2em; /* Reduced padding for smaller size */
-            outline: none;
-            border: 1px solid #303030;
-            background: #212121;
-            color: #5149ca;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 13px; /* Reduced font size */
-            overflow: hidden;
-            transition: 0.2s;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+    position: relative;
+    padding: 0.8em 1.2em;
+    outline: none;
+    border: 1px solid #303030;
+    background: #212121;
+    color: #5149ca;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
 
-        .btn3:hover {
-            box-shadow: 0 0 10px #3122ff, 0 0 25px #001eff, 0 0 50px #3122ff;
-            transition-delay: 0.6s;
-            color: white;
-        }
+  .btn3:hover {
+    box-shadow: 0 0 10px #3122ff, 0 0 25px #001eff, 0 0 50px #3122ff;
+    transition-delay: 0.6s;
+    color: white;
+  }
 
-        .btn3 span {
-            position: absolute;
-        }
+  /* Adjust toggle button size on smaller screens */
+  @media (max-width: 576px) {
+    .btn3 {
+      padding: 0.6em 1em;
+      font-size: 12px;
+      margin-left: 1rem;
+    }
+  }
 
-        /* Adjust toggle button size on smaller screens */
-        @media (max-width: 576px) {
-            .btn3 {
-                padding: 0.6em 1em;
-                font-size: 12px;
-                margin-left: 1rem;
-            }
-        }
+  /* Navbar styling */
+  .custom-navbar {
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
 
-        /* Navbar styling */
-        .custom-navbar {
-            background: rgba(0, 0, 0, 0.25);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            border-radius: 10px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 1rem;
+  }
 
-        .navbar-nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 1rem; /* Add padding to dropdown items */
-        }
+  /* Adjust toggle button icon color */
+  .navbar-toggler-icon {
+    background-color: #fff;
+  }
 
-        /* Toggle icon change for open/close */
-        .navbar-toggler.collapsed .navbar-toggler-icon::before {
-            content: "";
-        }
+  .navbar-toggler {
+    border: 1px solid #fff;
+  }
 
-        .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
-            background-color: transparent;
-            position: relative;
-        }
+  .navbar-brand img {
+    width: 210px;
+    height: 90px;
+    transition: width 0.3s ease, height 0.3s ease;
+  }
 
-        .navbar-toggler:not(.collapsed) .navbar-toggler-icon::before,
-        .navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            width: 100%;
-            height: 2px;
-            background-color: #fff;
-        }
+  /* Responsive navbar brand image */
+  @media (max-width: 992px) {
+    .navbar-brand img { width: 180px; height: 75px; }
+  }
+  @media (max-width: 768px) {
+    .navbar-brand img { width: 150px; height: 65px; }
+  }
+  @media (max-width: 576px) {
+    .navbar-brand img { width: 120px; height: 50px; }
+  }
 
-        .navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
-            transform: rotate(45deg);
-        }
+  /* Navigation link hover effect */
+  .navbar-nav .nav-link {
+    position: relative;
+    color: #ffffff;
+    transition: color 0.3s ease;
+  }
 
-        .navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
-            transform: rotate(-45deg);
-        }
+  .navbar-nav .nav-link:hover {
+    color: #3122ff;
+  }
 
-        /* Adjust toggle button icon color */
-        .navbar-toggler-icon {
-            background-color: #fff;
-        }
+  .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #3122ff;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+  }
 
-        .navbar-toggler {
-            border: 1px solid #fff;
-        }
-
-        .navbar-brand img {
-            width: 210px;
-            height: 90px;
-            transition: width 0.3s ease, height 0.3s ease;
-        }
-
-        /* Medium screens (tablets) */
-        @media (max-width: 992px) {
-            .navbar-brand img {
-                width: 180px;
-                height: 75px;
-            }
-        }
-
-        /* Small screens (large phones) */
-        @media (max-width: 768px) {
-            .navbar-brand img {
-                width: 150px;
-                height: 65px;
-            }
-        }
-
-        /* Extra small screens (small phones) */
-        @media (max-width: 576px) {
-            .navbar-brand img {
-                width: 120px;
-                height: 50px;
-            }
-        }
-
-        /* Navigation link hover effect */
-        .navbar-nav .nav-link {
-            position: relative;
-            color: #ffffff; /* Default color */
-            transition: color 0.3s ease;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: #3122ff; /* Change link color on hover */
-        }
-
-        .navbar-nav .nav-link::after {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: #3122ff; /* Line color */
-            left: 0;
-            bottom: -5px; /* Adjusts the position below the text */
-            transition: width 0.3s ease;
-        }
-
-        .navbar-nav .nav-link:hover::after {
-            width: 100%; /* Expands the line to full width on hover */
-        }
+  .navbar-nav .nav-link:hover::after {
+    width: 100%;
+  }
 </style>
+
 <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
   <div class="container-fluid">
     <a class="navbar-brand ms-2" href="/">
       <img src="/images/rawbluelight.png" alt="Logo" class="d-inline-block align-text-top">
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button id="navbarToggle" class="navbar-toggler" type="button" aria-expanded="false" aria-controls="navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -173,7 +128,6 @@
           <a class="nav-link text-white" href="#reviews">Reviews</a>
         </li>
       </ul>
-      <!-- Adjusted Contact Us button container -->
       <div class="d-flex me-3">
         <a href="#contact">
           <button class="btn3">
@@ -187,3 +141,19 @@
     </div>
   </div>
 </nav>
+
+<!-- Custom JavaScript to toggle the navbar -->
+<script>
+  document.getElementById("navbarToggle").addEventListener("click", function () {
+    const navbarCollapse = document.getElementById("navbarNav");
+    const isExpanded = navbarCollapse.classList.contains("show");
+    
+    if (isExpanded) {
+      navbarCollapse.classList.remove("show");
+      this.setAttribute("aria-expanded", "false");
+    } else {
+      navbarCollapse.classList.add("show");
+      this.setAttribute("aria-expanded", "true");
+    }
+  });
+</script>
