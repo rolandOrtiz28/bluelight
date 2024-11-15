@@ -366,37 +366,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.addEventListener("DOMContentLoaded", function() {
-    // Register ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger);
+  // document.addEventListener("DOMContentLoaded", function() {
+   
+  //   gsap.registerPlugin(ScrollTrigger);
 
-    // About Section Scroll-Triggered Animation (Pan effect from sides)
-    gsap.from(".about-img", {
-      x: -200,
-      opacity: 0,
-      duration: 1.5,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".About-Section",
-        start: "top 80%",
-        toggleActions:'restart pause resume none',
-      }
-    });
+    
+  //   gsap.from(".about-img", {
+  //     x: -200,
+  //     opacity: 0,
+  //     duration: 1.5,
+  //     ease: "power2.out",
+  //     scrollTrigger: {
+  //       trigger: ".About-Section",
+  //       start: "top 80%",
+  //       toggleActions:'restart pause resume none',
+  //     }
+  //   });
 
-    gsap.from(".about-text", {
-      x: 200,
-      opacity: 0,
-      duration: 1.5,
-      ease: "power2.out",
-      delay: 0.5,
-      scrollTrigger: {
-        trigger: ".About-Section",
-        start: "top 80%",
-        toggleActions:'restart pause resume none',
-      }
-    });
+  //   gsap.from(".about-text", {
+  //     x: 200,
+  //     opacity: 0,
+  //     duration: 1.5,
+  //     ease: "power2.out",
+  //     delay: 0.5,
+  //     scrollTrigger: {
+  //       trigger: ".About-Section",
+  //       start: "top 80%",
+  //       toggleActions:'restart pause resume none',
+  //     }
+  //   });
 
-  });
+  // });
 
 
   document.querySelectorAll('.team-member').forEach(member => {

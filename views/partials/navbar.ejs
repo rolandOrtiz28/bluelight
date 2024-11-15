@@ -1,184 +1,154 @@
 <style>
   /* Button styling */
-  /* From Uiverse.io by menezes11 */
   .btn3 {
-    position: relative;
-    padding: 1em 1.8em;
-    outline: none;
-    border: 1px solid #303030;
-    background: #212121;
-    color: #5149ca;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 15px;
-    overflow: hidden;
-    transition: 0.2s;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-  }
+            position: relative;
+            padding: 0.8em 1.2em; /* Reduced padding for smaller size */
+            outline: none;
+            border: 1px solid #303030;
+            background: #212121;
+            color: #5149ca;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px; /* Reduced font size */
+            overflow: hidden;
+            transition: 0.2s;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
 
-  .btn3:hover {
-    box-shadow: 0 0 10px #3122ff, 0 0 25px #001eff, 0 0 50px #3122ff;
-    transition-delay: 0.6s;
-    color: white;
-  }
+        .btn3:hover {
+            box-shadow: 0 0 10px #3122ff, 0 0 25px #001eff, 0 0 50px #3122ff;
+            transition-delay: 0.6s;
+            color: white;
+        }
 
-  .btn3 span {
-    position: absolute;
-  }
+        .btn3 span {
+            position: absolute;
+        }
 
-  .btn3 span:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #3122ff);
-  }
+        /* Adjust toggle button size on smaller screens */
+        @media (max-width: 576px) {
+            .btn3 {
+                padding: 0.6em 1em;
+                font-size: 12px;
+                margin-left: 1rem;
+            }
+        }
 
-  .btn3:hover span:nth-child(1) {
-    left: 100%;
-    transition: 0.7s;
-  }
+        /* Navbar styling */
+        .custom-navbar {
+            background: rgba(0, 0, 0, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
 
-  .btn3 span:nth-child(3) {
-    bottom: 0;
-    right: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #001eff);
-  }
+        .navbar-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 1rem; /* Add padding to dropdown items */
+        }
 
-  .btn3:hover span:nth-child(3) {
-    right: 100%;
-    transition: 0.7s;
-    transition-delay: 0.35s;
-  }
+        /* Toggle icon change for open/close */
+        .navbar-toggler.collapsed .navbar-toggler-icon::before {
+            content: "";
+        }
 
-  .btn3 span:nth-child(2) {
-    top: -100%;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, transparent, #3122ff);
-  }
+        .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+            background-color: transparent;
+            position: relative;
+        }
 
-  .btn3:hover span:nth-child(2) {
-    top: 100%;
-    transition: 0.7s;
-    transition-delay: 0.17s;
-  }
+        .navbar-toggler:not(.collapsed) .navbar-toggler-icon::before,
+        .navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+        }
 
-  .btn3 span:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, #001eff);
-  }
+        .navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+            transform: rotate(45deg);
+        }
 
-  .btn3:hover span:nth-child(4) {
-    bottom: 100%;
-    transition: 0.7s;
-    transition-delay: 0.52s;
-  }
+        .navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+            transform: rotate(-45deg);
+        }
 
-  .btn3:active {
-    background: #3122ff;
-    background: linear-gradient(to top right, #3122ff, #001eff);
-    color: #bfbfbf;
-    box-shadow: 0 0 8px #3122ff, 0 0 8px #001eff, 0 0 8px #3122ff;
-    transition: 0.1s;
-  }
+        /* Adjust toggle button icon color */
+        .navbar-toggler-icon {
+            background-color: #fff;
+        }
 
-  /* Navbar styling */
-  .custom-navbar {
-    background: rgba(0, 0, 0, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 10px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-  }
+        .navbar-toggler {
+            border: 1px solid #fff;
+        }
 
-  .navbar-nav {
-    display: flex;
-    justify-content: center; /* Center align the nav items */
-    gap: 20px;
-  }
+        .navbar-brand img {
+            width: 210px;
+            height: 90px;
+            transition: width 0.3s ease, height 0.3s ease;
+        }
 
-  .navbar-collapse {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-  
-  .navbar-brand img {
-  width: 210px;
-  height: 90px;
-  transition: width 0.3s ease, height 0.3s ease;
-}
+        /* Medium screens (tablets) */
+        @media (max-width: 992px) {
+            .navbar-brand img {
+                width: 180px;
+                height: 75px;
+            }
+        }
 
-/* Medium screens (tablets) */
-@media (max-width: 992px) {
-  .navbar-brand img {
-    width: 180px;
-    height: 75px;
-  }
-}
+        /* Small screens (large phones) */
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 150px;
+                height: 65px;
+            }
+        }
 
-/* Small screens (large phones) */
-@media (max-width: 768px) {
-  .navbar-brand img {
-    width: 150px;
-    height: 65px;
-  }
-}
+        /* Extra small screens (small phones) */
+        @media (max-width: 576px) {
+            .navbar-brand img {
+                width: 120px;
+                height: 50px;
+            }
+        }
 
-/* Extra small screens (small phones) */
-@media (max-width: 576px) {
-  .navbar-brand img {
-    width: 120px;
-    height: 50px;
-  }
-}
+        /* Navigation link hover effect */
+        .navbar-nav .nav-link {
+            position: relative;
+            color: #ffffff; /* Default color */
+            transition: color 0.3s ease;
+        }
 
-/* Navigation link hover effect */
-.navbar-nav .nav-link {
-  position: relative;
-  color: #ffffff; /* Default color */
-  transition: color 0.3s ease;
-}
+        .navbar-nav .nav-link:hover {
+            color: #3122ff; /* Change link color on hover */
+        }
 
-.navbar-nav .nav-link:hover {
-  color: #3122ff; /* Change link color on hover */
-}
+        .navbar-nav .nav-link::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #3122ff; /* Line color */
+            left: 0;
+            bottom: -5px; /* Adjusts the position below the text */
+            transition: width 0.3s ease;
+        }
 
-.navbar-nav .nav-link::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background-color: #3122ff; /* Line color */
-  left: 0;
-  bottom: -5px; /* Adjusts the position below the text */
-  transition: width 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover::after {
-  width: 100%; /* Expands the line to full width on hover */
-}
-
-.navbar-toggler-icon {
-  background-color: #fff; /* Set the color of the icon */
-}
-
-.navbar-toggler {
-  border: 1px solid #fff;
-}
+        .navbar-nav .nav-link:hover::after {
+            width: 100%; /* Expands the line to full width on hover */
+        }
 </style>
 <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
   <div class="container-fluid">
