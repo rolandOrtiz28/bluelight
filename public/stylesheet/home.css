@@ -841,19 +841,30 @@ filter: none;
 }
 
 .form-container {
-    width: 50%;
-    background: linear-gradient(#212121, #212121) padding-box,
-                linear-gradient(145deg, transparent 35%, #2b1cff, #40c9ff) border-box;
-    border: 2px solid transparent;
-    padding: 32px 24px;
-    font-size: 14px;
-    font-family: inherit;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    box-sizing: border-box;
-    border-radius: 16px;
+  max-width: 500px; /* Set a max width */
+  min-width: 320px; /* Set a minimum width */
+  width: 100%;
+  background: linear-gradient(#212121, #212121) padding-box,
+              linear-gradient(145deg, transparent 35%, #2b1cff, #40c9ff) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  margin: 0 auto; /* Center the form */
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .form-container {
+      max-width: 90%; /* Make form take 90% width of the screen on small screens */
+      padding: 24px 16px; /* Adjust padding */
+  }
 }
 
 .form-container button:active {
