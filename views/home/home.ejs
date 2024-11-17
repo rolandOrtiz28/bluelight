@@ -76,7 +76,7 @@
     <div class="container-fluid p-5">
       <div class="row gx-5">
         <!-- Customer Service Card -->
-        <div class="col-md-4">
+        <div class="col-md-4" id="customer-service">
           <div class="card service-item">
             <div class="service-icon img">
               <img src="/images/CS.gif" alt="">
@@ -91,7 +91,7 @@
         </div>
   
         <!-- Technical Support Card -->
-        <div class="col-md-4">
+        <div class="col-md-4" id="technical-support">
           <div class="card service-item">
             <div class="service-icon img">
               <img src="/images/TS.gif" alt="">
@@ -106,7 +106,7 @@
         </div>
   
         <!-- SEO Card -->
-        <div class="col-md-4">
+        <div class="col-md-4" id="SEO">
           <div class="card service-item">
             <div class="service-icon img">
               <img src="/images/SEO.gif" alt="">
@@ -151,7 +151,7 @@
         </div>
   
         <!-- Web Development Card -->
-        <div class="col-md-4">
+        <div class="col-md-4" id="web-dev">
           <div class="card service-item">
             <div class="service-icon img">
               <img src="/images/WD.gif" alt="">
@@ -532,30 +532,28 @@
     <div class="row">
       <!-- Left section with logo and mission statement -->
       <div class="col-md-4 text-start">
-        <img src="/images/rawbluelight.png" alt="Bluelight Logo"  class="footer-logo mb-3 img-fluid" style="width: 200px;">
+        <img src="/images/rawbluelight.png" alt="Bluelight Logo" class="footer-logo mb-3 img-fluid" style="width: 200px;">
         <p class="footer-mission">
           We aim to bridge gaps, foster innovation, and drive progress by developing digital experiences that are intuitive, inclusive, and inspiring.
         </p>
         <p class="copyright">&copy; 2024 Bluelight.</p>
       </div>
-      
-      <!-- Center section with core services and learn links -->
+
+      <!-- Center section with core services -->
       <div class="col-md-4 text-start">
         <h5 class="footer-heading">Core Services</h5>
         <ul class="footer-links">
-          <li><a href="#">Customer Service</a></li>
-          <li><a href="#">Technical Support</a></li>
-          <li><a href="#">SEO</a></li>
-          <li><a href="#">Web Development</a></li>
+          <li>Customer Service</li>
+          <li>Technical Support</li>
+          <li>SEO</li>
+          <li>Web Development</li>
         </ul>
-        
-        <h5 class="footer-heading mt-4">Learn</h5>
-        <ul class="footer-links">
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Case Studies</a></li>
-        </ul>
+        <h5 class="footer-heading mt-4">Contact Information</h5>
+        <p class="footer-description">
+          Email: <a href="mailto:viewnetvue22@gmail.com" class="text-white">viewnetvue22@gmail.com</a><br>
+        </p>
       </div>
-      
+
       <!-- Right section with newsletter subscription form -->
       <div class="col-md-4">
         <h5 class="footer-heading">Stay Up to Date with Bluelight</h5>
@@ -570,15 +568,78 @@
     <!-- Bottom links -->
     <div class="row mt-4">
       <div class="col text-center">
-        <a href="#" class="footer-policy-link">Privacy Policy</a>
-        <a href="#" class="footer-policy-link">Refund Policy</a>
-        <a href="#" class="footer-policy-link">Shipping Policy</a>
-        <a href="#" class="footer-policy-link">Contact Information</a>
-        <a href="#" class="footer-policy-link">Terms of Service</a>
+        <!-- Privacy Policy Modal Trigger -->
+        <a href="#" class="footer-policy-link" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">Privacy Policy</a>
+        <!-- Terms of Service Modal Trigger -->
+        <a href="#" class="footer-policy-link" data-bs-toggle="modal" data-bs-target="#termsOfServiceModal">Terms of Service</a>
       </div>
     </div>
   </div>
+
+  
 </footer>
+
+<!-- Privacy Policy Modal -->
+<div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content  bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="privacyPolicyModalLabel">Privacy Policy</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body  bg-dark">
+        <p>
+          At Bluelight Innovations, your privacy is our priority. We collect and use your data only to provide exceptional services and improve your experience. We guarantee that your data is secure and never shared with third parties without your consent.
+        </p>
+        <h6>What We Collect:</h6>
+        <ul>
+          <li>Contact Information: Name, email, and phone number</li>
+          <li>Usage Data: Analytics to improve user experience</li>
+        </ul>
+        <h6>Your Rights:</h6>
+        <p>
+          You have the right to access, update, or delete your personal data at any time. Contact us at <a href="#contact">here</a> for any requests or concerns.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Terms of Service Modal -->
+<div class="modal fade" id="termsOfServiceModal" tabindex="-1" aria-labelledby="termsOfServiceModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="termsOfServiceModalLabel">Terms of Service</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body bg-dark">
+        <p>
+          Welcome to Bluelight Innovations. By using our services, you agree to the following terms and conditions.
+        </p>
+        <h6>Service Usage:</h6>
+        <p>
+          Our services are intended for legitimate business purposes. You agree not to misuse our services or engage in unlawful activities.
+        </p>
+        <h6>Intellectual Property:</h6>
+        <p>
+          All content, designs, and trademarks on our platform are the property of Bluelight Innovations. Unauthorized use or distribution is prohibited.
+        </p>
+        <h6>Disclaimer:</h6>
+        <p>
+          We strive to provide accurate information and reliable services. However, we do not guarantee uninterrupted or error-free experiences and disclaim liability for any issues arising from the use of our services.
+        </p>
+        <h6>Contact Us:</h6>
+        <p>
+          For any questions about these terms, please contact us at <a href="#contact">here</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 <script src="/javascript/home.js"></script>
 
