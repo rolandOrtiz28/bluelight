@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="/images/rawbluelight.svg" />
+    <link rel="icon" type="image/svg+xml" href="/images/solologo.svg" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bluelight Innovations</title>
@@ -47,6 +47,13 @@ body, html {
     padding: 0;
     margin: 0;
 }
+main {
+      padding-top: 100px; /* Adjust this value to match the navbar height */
+  }
+
+  main {
+      padding-top: 100px; /* Adjust if necessary */
+  }
 
     </style>
 </head>
@@ -72,6 +79,17 @@ body, html {
     
 
 
-   
+    <script>
+        // Dynamically adjust padding for <main> based on navbar height
+        window.addEventListener("DOMContentLoaded", () => {
+            const navbar = document.querySelector(".custom-navbar");
+            const main = document.querySelector("main");
+      
+            if (navbar && main) {
+                const navbarHeight = navbar.offsetHeight;
+                main.style.paddingTop = `${navbarHeight}px`;
+            }
+        });
+      </script>
 </body>
 </html>

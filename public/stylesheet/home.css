@@ -11,7 +11,9 @@
       white-space: nowrap;
       animation: brokenLight 2s infinite; /* Runs every 2 seconds */
   }
-  
+  section {
+    scroll-margin-top: 100px; /* Adjust based on your navbar height */
+}
   /* Keyframes for flickering followed by a brief shutdown */
   @keyframes brokenLight {
       0%, 20% {

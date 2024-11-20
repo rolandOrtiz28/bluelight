@@ -405,3 +405,20 @@ document.addEventListener('DOMContentLoaded', () => {
     message.textContent = member.getAttribute('data-message');
     member.appendChild(message);
 });
+
+document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      const offset = document.querySelector('.custom-navbar').offsetHeight; // Navbar height
+
+      if (targetElement) {
+          window.scrollTo({
+              top: targetElement.offsetTop - offset, // Scroll position accounting for navbar
+              behavior: 'smooth' // Smooth scrolling
+          });
+      }
+  });
+});
