@@ -40,13 +40,10 @@
           opacity: 1;
           filter: brightness(1);
       }
-      90% {
-          opacity: 0.6;
-          filter: brightness(0.9);
+      90%, 100% {
+        opacity: 0;
       }
-      95%, 100% {
-          opacity: 0; /* Final "shutdown" before word change */
-      }
+     
   }
   
     .responsive-video {
@@ -271,6 +268,16 @@
 
 
 /* Responsive font sizes */
+@media (max-width: 1629px) {
+  .sweep-animation {
+      font-size: 1.7rem;
+  }
+}
+@media (max-width: 1422px) {
+  .sweep-animation {
+      font-size: 1.5rem;
+  }
+}
 @media (max-width: 1300px) {
   .sweep-animation {
       font-size: 1.4rem;
